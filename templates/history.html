@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Doookan.com</title>
+	<meta charset="utf-8">
+	<!-- for responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/s-history.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Shadows Into Light' rel='stylesheet'>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+	<style>
+		.main-container {
+			margin: auto;
+        width: 80vw;
+        height: 80vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+		flex-wrap: wrap;
+		box-shadow: 0px 0px 15px grey;
+		border-radius: 10px;
+		margin-bottom: 20px;	
+      }
+
+      .card-v {
+        width: 500px;
+        height: 40%;
+        /* padding: 10px; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+
+      .card-left {
+        width: 45%;
+        height: 90%;
+      }
+
+      .card-left > img {
+        width: 100%;
+        height: 100%;
+      }
+      .card-right {
+				
+        width: 45%;
+        height: 90%;
+				padding: 0px 20px;
+				padding-top: 5px;
+			}
+			
+			.card-right>h3{
+			font-size: 2rem;
+			margin: 5px 0px;
+			
+			margin-top: 0px;
+			}
+
+			.card-right>.vendor-name{
+				margin: 0px;
+			}	
+	</style>
+</head>
+ 
+<body>
+<div class="bg-img"></div>
+   
+<header>
+	<!--<div id="nav-belt"> 
+		<div class="nav-left">
+			<div id="nav-logo">
+			<a href="#" class="nav-logo-link"></a>	
+			</div>
+		</div>
+
+		<div class="nav-right">
+			<div id="nav-search"> 
+				<div class="nav-left">
+					<input type="Search" autocomplete="off" placeholder="Search products.." style="line-height: 35px; ">
+				</div>
+				<div class="nav-right">
+					<form>
+					<button type="submit" style="height: 40px; "><i class="fa fa-search"></i></button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>  -->
+	<div class="bg-img"></div>
+
+	<div id="nav-logo" class="float-left">
+		<a href="landing.html" class="nav-logo-link">
+	 <img src="{{ url_for('static',filename='img/logo.png') }}" style="height: 40px; width: 90px; padding-bottom: 3px;"> </a>
+	</div>		
+	<div class="float-right" style="margin-right: 5px; margin-top: 15px;">
+		<!-- <form class="form-inline my-2 my-lg-0" style="padding-top: 5px; float: right; color:#7364a7; margin-top: 0%; margin-left: 10px;" action="/" method="POST">
+		
+			<input type="submit" class="login" name="logbtn" value="Login" style="width: 80px; height: 32px"> -->
+	 <form class="form-inline my-2 my-lg-0" style="padding-top: 5px; float: right; color:#7364a7; margin-top: 0%; margin-left: 10px;"action="/" method="POST">
+			<input type="submit" class="login" name="logbtn" value="Login" style="width: 80px; height: 30px">
+
+			<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+			<input style="background-color:#7364a7; color: white; " class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbtn" value="Search">
+		  <!--shopping cart-->
+	<i class="fa" style="font-size:24px; color: #7364a7; margin-left: 20px;">&#xf07a;</i>
+	<span class='badge badge-warning' id='lblCartCount'> 0 </span>
+		</form>
+	</div>
+<nav class="navbar navbar-expand-lg " style="background-color:#7364a7; width: 100%; >
+	<button class="navbar-toggler" style="color: #7364a7;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon" style="color: #7364a7;"></span>
+	</button>
+  
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+	  <ul class="navbar-nav mr-auto">
+		<li class="nav-item active">
+		  <a class="nav-link" href="landing.html">HOME <span class="sr-only">(current)</span></a>
+		</li>
+		<li class="nav-item dropdown">
+		  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			ALL	CATEGORIES
+		  </a>
+		  <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #a39ac7;">
+			<a class="dropdown-item" href="#">Fruits</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Vegetables</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Grocery</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Daily Essentials</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Tools and Electricals</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Grooming Essentials</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Baby Essentials</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Best Sellers</a>
+		  </div>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="#about-section">ABOUT US</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">PREVIOUS ORDERS</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#offers-section">OFFERS</a>
+		  </li>
+		  <li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				LANGUAGE
+			  </a>
+			<div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #a39ac7;">
+				<a class="dropdown-item" href="#">Hindi</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="#">English</a>
+			</div>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#contact-section">CONTACT US</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="media.html">MEDIA</a>
+		  </li>
+	  </ul>
+	</div>
+  </nav>
+</header>
+
+<div class="btn-toolbar">
+    <div role="group" class="btn-group">
+        <button class="btn btn-default" type="button"><span class="sr-only">(current)</span>Pending Orders</button>
+        <button class="btn btn-default" type="button" style="color:white; background-color: #7364a7;">Completed Orders</button>
+        <button class="btn btn-default" type="button" >Cancelled Orders</button>
+    </div>
+</div><br><br>
+
+<div class="main-container">
+	<!-- My card div starts here -->
+	<div class="card-v">
+		<div class="card-left">
+			<img src="{{ url_for('static',filename='img/m2.jpg') }}" alt="" />
+		</div>
+		<div class="card-right">
+			<h3>Cotton Sweater</h3>
+			<p class="vendor-name">By Vendors Name</p>
+			<p style="margin-top: 20px;">Size - Medium</p>
+			<p style="margin-top: 20px; margin-bottom: 20px;">Quantity - 2</p>
+			<h3>Rs - 1400/-</h3>
+		</div>
+	</div>
+	<!-- Card div ends here -->
+
+	<!-- My card div starts here -->
+	<div class="card-v">
+		<div class="card-left">
+			<img src="{{ url_for('static',filename='img/m4.jpg') }}" alt="" style="width:250px; height: 270px; margin-top: -40px;"/>
+		</div>
+		<div class="card-right">
+			<h3>Black Jacket</h3>
+			<p class="vendor-name">By Vendors Name</p>
+			<p style="margin-top: 20px;">Size - Medium</p>
+			<p style="margin-top: 20px; margin-bottom: 20px;">Quantity - 3</p>
+			<h3>Rs - 1750/-</h3>
+		</div>
+	</div>
+	<!-- Card div ends here -->
+
+	<!-- My card div starts here -->
+	<div class="card-v">
+		<div class="card-left">
+			<img src="{{ url_for('static',filename='img/w1.jpg') }}" alt="" />
+		</div>
+		<div class="card-right">
+			<h3>Silk Sweater</h3>
+			<p class="vendor-name">By Vendors Name</p>
+			<p style="margin-top: 20px;">Size - Medium</p>
+			<p style="margin-top: 20px; margin-bottom: 20px;">Quantity - 4</p>
+			<h3>Rs - 1650/-</h3>
+		</div>
+	</div>
+	<!-- Card div ends here -->
+
+	<!-- My card div starts here -->
+	<div class="card-v">
+		<div class="card-left">
+			<img src="{{ url_for('static',filename='img/w3.jpg') }}" alt="" />
+		</div>
+		<div class="card-right">
+			<h3>Summer Dress</h3>
+			<p class="vendor-name">By Vendors Name</p>
+			<p style="margin-top: 20px;">Size - Medium</p>
+			<p style="margin-top: 20px; margin-bottom: 20px;">Quantity - 2</p>
+			<h3>Rs - 1000/-</h3>
+		</div>
+	</div>
+	<!-- Card div ends here -->
+</div>
+<footer>
+	<div class="go-to-top" style="background-color: #a39ac7; font-size: 25px;">
+		<center>
+		<a href="#" style="text-align: center; color: #1a152c;">Back to top</a>
+		</center>
+	</div>
+
+		 <div class="container1" style="background-color: #1a152c;">
+		   
+		            <div class="row">
+		            <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12">
+		                <ul class="adress">
+							<br>
+							<a name="contact-section"></a>
+		                     <span>Address</span>    
+		                     <li>
+		                        <p style="font-family: 'Roboto';">Lorem ipsum dolor sit amet, vero omnis vocibus</p>
+		                      </li>
+		                           
+		                      <li>
+		                        <p>+90 1234 56789</p>
+		                      </li>
+		                           
+		                      <li>
+		                        <p>info@gmail.com</p>
+		                      </li>
+		                 </ul>
+		            </div>
+		            <div class="vl"></div>
+		            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+		                <ul class="contact">
+							<br>
+		                     <span >Quick Links</span>    
+		                     <li>
+		                        <a href="#">Home</a>
+		                      </li>
+		                           
+		                      <li>
+		                         <a href="#">Offers</a>
+		                      </li>
+		                           
+		                      <li>
+		                        <a href="#">Blog</a>
+		                      </li>
+		                           
+		                      <li>
+		                        <a href="#">Contact Us</a>
+		                     </li>
+		                </ul>
+		            </div>
+					<div class="vl"></div>
+					<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+		               <ul class="social">
+		                   <span ><br>Follow us</span>    
+                           <li>
+                                <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                           </li>
+                          
+                           <li>
+                                <a href="#"><i class="fa fa-github fa-2x"></i></a>
+                           </li>
+                            
+                           <li>
+                                <a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
+                           </li>
+                           
+                           <li>
+                                <a href="#"><i class="fa fa-tumblr fa-2x"></i></a>
+                           </li>
+                            
+                           <li>
+                                <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
+                          </li>
+                          
+                 </ul>
+	   </div>
+	   </div>
+       </div>
+    </div>
+	<hr style="border: 1px solid white;">
+    &copy; Copyright 2020 All rights reserved
+    <p class="float-right">Terms and Conditions |<a href="policy.html" style="color: white;">Privacy Policy</a> </p>
+    </footer>
+</footer>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

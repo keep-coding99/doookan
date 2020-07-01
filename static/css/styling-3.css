@@ -1,0 +1,686 @@
+html,body
+{
+	margin: 0;
+	font-family: arial;
+	line-height: 15 px;
+	font-size: 15px;
+	font-family: Roboto;
+	overflow-x: hidden;
+}
+
+*
+{
+	box-sizing: border-box;
+}
+
+/*a
+{
+	color: #a39ac7;
+	background-color: #a39ac7;
+}*/
+
+hover
+{
+	color: #FFFFFF;
+}
+
+header
+{
+	background-color: white;
+	height: 80px;
+}
+
+.bg-img
+{
+	background-image: url("shop1.jpg");
+	background-repeat: no-repeat;
+
+	  /* Add the blur effect */
+	 /*filter: blur(3px);
+
+	 -webkit-filter: blur(8px);
+
+	  /* Full height 
+	 height: 100%;
+
+	   Center and scale the image nicely 
+	 /*background-position: center;
+	 
+	 
+	 background-size: cover;
+*/
+}
+
+.nav-left
+{
+	position:relative; 
+	float: left;   /* for lwft nav, float shld be kept left*/
+	width: auto ;
+	display: inline-block;
+	padding-right: 90px;
+}
+
+.nav-right
+{	
+	margin-top: 0px;
+	position:relative; 
+	float: right;  /* for rgt nav, float shld be kept rigt*/
+	width: auto ;
+	display: inline-block;
+	
+}
+#nav-logo
+{	
+	padding: 10px 20px 0 25px;
+	position: relative;
+	width: 150px;
+}
+#nav-logo .nav-logo-link
+{
+	background: transparent url('logo.png') no-repeat top left ;
+	background-size: 90px;
+	width: 150px;
+	height: 50px;
+	display: block;
+}
+
+.box{
+	position: relative;
+	display: inline-block; /* Make the width of box same as image */
+}
+.box .text{
+	position: absolute;
+	z-index: 999;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	top: 40%; /* Adjust this value to move the positioned div up and down */
+	text-align: center;
+	width: 60%; /* Set the width of the positioned div */
+	color: white;
+}
+
+.abcd {
+	position: relative;
+	text-align: center;
+  /*color: black;*/
+  font-family: Arial;
+  }
+  .text-block {
+	  margin-top: 120px;
+	position: absolute;
+	bottom: 20px;
+	color: white;
+	padding-left: 20px;
+	padding-right: 20px;
+  }
+  /*.centered {
+	position: absolute;
+	top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  }*/
+  .imagecont {
+	width:100%; 
+	height:200px; 
+	background-image: url("img/About.jpg");
+}
+.login{
+	background-color:#7364a7; 
+	border:none; color:white; 
+	margin-top: 5px; 
+	margin-right: 10px; 
+	padding: 6px;
+	border-radius: 5px;
+}
+.nav-logo-link{
+	background-color:#7364a7; 
+	border:none; color:white; 
+	margin-top: 5px; 
+	margin-right: 10px; 
+	padding: 6px;border-radius: 5px;
+}
+li a:hover:not(.active) {
+	background-color: #a39ac7;
+	color: white;
+	
+  }
+.navbar-nav > li{
+	margin-left:20px;
+	margin-right:20px;
+  }
+#nav-search
+{
+	position:relative;
+	display: block ;
+	overflow: hidden ;
+	padding-top: 10px ;
+	padding-right:85px ;
+}
+
+#nav-search .nav-left:hover
+{
+	background-color: #B8B3B7;
+}
+
+#nav-search .nav-left:visited {
+	color: pink;
+	background-color: transparent;
+	text-decoration: none;
+  }
+  
+
+#nav-search .nav-right  button 
+{
+    display:block;
+    /*text-align: left;
+    */
+    width: 85%;
+    height: 40%;
+    /*margin: 0;*/
+    padding: 2px;
+ }
+
+ .badge {
+	padding-left: 9px;
+	padding-right: 9px;
+	-webkit-border-radius: 9px;
+	-moz-border-radius: 9px;
+	border-radius: 9px;
+  }
+  
+  .label-warning[href],
+  .badge-warning[href] {
+	background-color: white;
+  }
+  #lblCartCount {
+	content:"100";
+    position: absolute;
+	  font-size: 10px;
+	  background: #910f0f;
+	  color: white;
+	  padding: 0 5px;
+	  vertical-align: top;
+	  height:2rem;
+    top:1rem;
+    right:.75rem;
+	width:2rem;
+	line-height: 2rem;;
+	  margin-left: -10px; 
+  }
+
+ .nav-right-cat
+{
+	position:absolute; 
+	float: right;   /* for rgt nav, float shld be kept rigt*/
+	width: auto ;
+	display: inline-block;
+	padding-top: 65px;
+	padding-left: 655px; 
+}
+
+@media (min-width: 1200px)
+{
+	.container
+	{
+		width: 1150px;
+		height: 320px;
+	}
+}
+
+/*#offer-prod .col-lg-3 button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+#offer-prod .col-lg-3 button:hover {
+  opacity: 0.7;
+}*/
+
+.column 
+{
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+
+}
+/*Vendors near you*/
+/*#vendors
+{
+	background-image: url(super.jpg);
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, repeat;
+  padding: 15px;*/
+
+/* Remove extra left and right margins, due to padding */
+
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after 
+{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card2
+{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0);
+  padding: 20px 5px 40px 5px;
+  text-align: center;
+  background-color:transparent;
+  height:400px;
+}
+
+.card1
+{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  padding: 25px;
+  text-align: center;
+  background-color: #f1f1f1;
+  height:290px;
+}
+
+.price 
+{
+  color: grey;
+  font-size: 22px;
+}
+
+#vid
+{
+	width:100%;
+	margin-bottom:400px;
+	height:300px;
+	
+}
+
+#vid1
+{
+	
+	float:left;
+	width: 33.3%;
+margin-left:30px;
+
+	
+}
+#vid2
+{
+	
+	float:left;
+	width: 33.3%;
+margin-left:30px;
+
+	
+}
+#vid3
+{
+	
+	float:left;
+	width: 33.3%;
+    margin-left:30px;
+	
+}
+
+					/*for footer*/
+
+footer{
+	color: white;
+     padding:70px 0px;
+     width:100%;
+     height:300px;
+     margin-bottom:5px;
+	 margin-top:50px;
+	 box-shadow: 0 50vh 0 50vh #1a152c;
+}	      
+.dropdown-menu
+{
+	background-color: #c34ff1;
+}
+
+footer ul li{
+    padding:5px 0px;
+}
+.vl {
+	border-left:1px solid white;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	height: 300px;
+  }
+@media screen and(min-width: 1000px)
+{
+	.cotainer1
+	{
+		width: 1000px;
+		height: 300px;
+	}
+}
+.vendor
+{
+	/*background-image: url("Vendor.jpg");*/
+	background-image: url(img/Vendor.jpg);
+	position: relative;
+}
+.about
+{
+	display: block;
+	overflow: hidden;
+	background-image: url(About.jpg);
+	height: 300px;
+	width: 100%;
+}
+.adress span , .contact span , .social span{
+   color: #FFF; 
+   font-weight: 800; 
+   padding-bottom: 10px; 
+   margin-bottom: 20px;
+   display: block;
+   text-transform: uppercase;
+   font-size: 20px;
+   letter-spacing: 3px;
+}
+ 
+.adress li p , .contact li a , .social li a{
+    color:#FFF;
+    letter-spacing: 2px;
+    text-decoration:none;
+    font-size:15px;
+}
+.card-body
+{
+	align-self: center;
+}
+
+.social li{
+    float:left;
+}
+
+.adress , .contact , .social {
+    list-style: none;
+}
+
+.fa{
+    color:white;
+    margin-right: 15px;
+    font-size:14px;
+}
+
+.nav-item a{
+	color: #FFFFFF;
+}
+
+/*carousal of comments*/
+#myCarousel
+{
+    height: 400px;
+}
+.item {
+    height: 400px;
+  }
+  ol.carousel-indicators li,
+ol.carousel-indicators li.active {
+  float: left;
+  width: 33%;
+  height: 10px;
+  margin: 0;
+  margin-bottom: 10px;
+  border-radius: 0;
+  border: 0;
+  background: transparent;
+  color: yellow;
+}
+.carousel-inner
+{
+    width: auto;
+    height: 500px;
+    max-height: 400px !important;
+    background-image:url("img/comments.png");
+}
+.carousel-content
+{
+    color: white;
+    display: flex;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    align-items: center;
+	padding-top: 250px;
+	
+	/*position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);*/
+}
+
+#promo{
+	padding-top: 27px;
+	height:600px;
+	padding-bottom:0;
+}
+#offer-prod{
+	height:400px;
+}
+
+#offer-sec{
+	height:400px;
+}
+#offers-tab
+{
+	margin-left: auto;
+	margin-right:auto;
+	align-self: center;
+	height: 35f0px;
+	width: 900px;
+}
+
+.bg-img{
+	background-image: url(super.jpg);
+}
+.button {
+	position: relative;
+	background-color: #de1b32;
+	border: none;
+	font-size: 16px;
+	color: #FFFFFF;
+	padding: 6px;
+	width: 100px;
+	text-align: center;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+	text-decoration: none;
+	overflow: hidden;
+	cursor: pointer;
+  }
+  .button:hover{
+	background-color: black;
+	text-decoration: underline;
+	
+	}
+	.button:after {
+	  content: "";
+	  background: /*#90EE90*/#335CA9;
+	  display: block;
+	  position: absolute;
+	  padding-top: 300%;
+	  padding-left: 350%;
+	  margin-left: -20px!important;
+	  margin-top: -120%;
+	  opacity: 0;
+	  transition: all 0.8s
+	}
+	
+	.button:active:after {
+	  padding: 0;
+	  margin: 0;
+	  opacity: 1;
+	  transition: 0s
+	}
+
+/*hover effect tried*/
+/*
+.card-body
+{
+	align-self: center;
+}
+
+
+.container {
+	position: relative;
+	width: 200px;
+	height: 200px;
+	display: inline-block;
+}
+
+.image{
+	display: block;
+	width: 200px;
+	height: 200px;
+}
+
+.overlay
+{
+	position: absolute;
+	transition: all .3s ease;
+	opacity: 0;
+	background-color: #eee;
+}
+.container:hover .overlayLeft
+{
+	opacity: 1;
+}
+
+.overlayLeft
+{
+	height: 100%;
+	width:0;
+	top:0;
+	left:0;
+}
+
+.text
+{
+	color:white;
+	font-family: sans-serif;
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	font-size: 20px;
+}
+
+/*
+.container {
+	/*old position: relative;
+	width: 50%;
+
+	width: 1280px;
+	
+	margin: 70px auto 0;
+	display: flex;
+	flex-direction: row;
+	flex-direction: wrap;
+  }
+  
+.container .box
+{
+	position: relative;
+	width: 300px;
+	height: 300px;
+	background: #ff0;
+	margin: 10px;
+	box-sizing: border-box;
+	display: inline-block;
+}
+.container .box .imgBox
+{
+	position: relative;
+}
+.container .box .imgBox img
+{
+	max-width: 100%;
+	transition: transform 2s;
+}
+
+.container .box .details
+{
+	position: absolute;
+	top:10px;
+	left: 10px;
+	bottom: 10pxx;
+	right: 10px;
+	background: rgba(0,0,0,0.8);
+	transform: scaleY(0);
+	transition: transform .5s;
+}
+.container .box:hover .details
+{
+	transform: scaleY(1);
+}
+.container .box .details .content
+{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+	align-content: center;
+	padding: 15px;
+	color:#fff;
+}
+
+.container .box .details .content.button
+{
+	align-content: center;
+	align-items: center;
+	margin-left: 30px;
+	 margin-top: 50px ;
+	color: #ff0;
+}
+
+
+  .image {
+	opacity: 1;
+	display: block;
+	width: 75%;
+	height: auto;
+	transition: .5s ease;
+	backface-visibility: hidden;
+  }
+  
+  .middle1 {
+	transition: .5s ease;
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	left: 25%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, +50%);
+	text-align: center;
+  }
+
+.container:hover .image {
+	opacity: 0.3;
+  }
+  
+  .container:hover .middle {
+	opacity: 1;
+  }
+  
+  .price {
+	background-color: #4CAF50;
+	color: white;
+	font-size: 16px;
+	padding: 16px 32px;
+  }
+*/
+
+

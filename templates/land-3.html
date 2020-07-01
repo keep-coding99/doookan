@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Doookan.com</title>
+	<meta charset="utf-8">
+	<!-- for responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/styling-3.css') }}">
+    <!-- <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
+     --><link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Shadows Into Light' rel='stylesheet'>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="{{ url_for('static',filename='js/pop.js') }}" type="text/javascript"></script> 
+
+ <style>
+
+.contain {
+  position: relative;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.contain .txt {
+  position: absolute;
+  bottom: 0;
+  top: 2px;
+  text-align: center; /*center*/
+  scroll-behavior: auto;
+  background: rgba(0, 0, 0, 0.4); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 100%;
+  padding: 5px; /*10px*/
+}
+
+</style>
+
+</head>
+ 
+
+<body style="overflow-x: hidden;">
+   
+<header>
+	<!--<div id="nav-belt"> 
+		<div class="nav-left">
+			<div id="nav-logo">
+			<a href="#" class="nav-logo-link"></a>	
+			</div>
+		</div>-->
+
+		<!--<div class="nav-right">
+			<div id="nav-search"> 
+				<div class="nav-left">
+					<input type="Search" autocomplete="off" placeholder="Search products.." style="line-height: 35px; ">
+				</div>
+				<div class="nav-right">
+					<form>
+					<button type="submit" style="height: 40px; "><i class="fa fa-search"></i></button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div> 
+	<div class="bg-img"></div>-->
+
+	<div id="nav-logo" class="float-left">
+		<a href="#" class="nav-logo-link">
+	 <img src="{{ url_for('static',filename='img/logo.png') }}" style="height: 40px; width: 90px; padding-bottom: 3px;"> </a>
+	</div>		
+	<div class="float-right" style="margin-right: 5px; margin-top: 15px;">
+		<!-- <form class="form-inline my-2 my-lg-0" style="padding-top: 5px; float: right; color:#7364a7; margin-top: 0%; margin-left: 10px;" action="/" method="POST">
+		
+			<input type="submit" class="login" name="logbtn" value="Login" style="width: 80px; height: 32px"> -->
+	 <form class="form-inline my-2 my-lg-0" style="padding-top: 5px; float: right; color:#7364a7; margin-top: 0%; margin-left: 10px;"action="/" method="POST">
+			<input type="submit" class="login" name="logbtn" value="Login" style="width: 80px; height: 30px">
+
+			<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+			<input style="background-color:#7364a7; color: white; " class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbtn" value="Search">
+
+		  <!--shopping cart-->
+	<i class="fa" style="font-size:24px; color: #7364a7; margin-left: 20px;">&#xf07a;</i>
+	<span class='badge badge-warning' id='lblCartCount'> 0 </span>
+		</form>
+	</div>
+<nav class="navbar navbar-expand-lg " style="background-color:#7364a7; width: 100%; margin: 5px;">
+	<button class="navbar-toggler" style="color: #7364a7;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon" style="color: #7364a7;"></span>
+	</button>
+  
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+	  <ul class="navbar-nav mr-auto">
+		<li class="nav-item active">
+		  <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+		</li>
+		<li class="nav-item dropdown">
+		  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			ALL	CATEGORIES
+		  </a>
+		  <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #a39ac7;">
+			<a class="dropdown-item" href="#">Fruits</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Vegetables</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Grocery</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Daily Essentials</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Tools and Electricals</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Grooming Essentials</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Baby Essentials</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Best Sellers</a>
+		  </div>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="#about-section">ABOUT US</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="history.html">PRODUCTS</a>
+		  </li>
+		  <!--<li class="nav-item">
+			<a class="nav-link" href="#">PRODUCTS</a>
+		  </li>-->
+		  <li class="nav-item">
+			<a class="nav-link" href="#offers-section">OFFERS</a>
+		  </li>
+		  <li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				LANGUAGE
+			  </a>
+			<div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #a39ac7;">
+				<a class="dropdown-item" href="#">Hindi</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="#">English</a>
+			</div>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#contact-section">CONTACT US</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="media.html">MEDIA</a>
+		  </li>
+	  </ul>
+	</div>
+  </nav>
+
+</header>
+<br><br><br>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000"
+data-pause="hover" ><!--style="background-image:{{ url_for('static',filename='img/comments.png') }}; height:400px;">
+<!-- Indicators -->
+<ol class="carousel-indicators">
+	<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+	<li data-target="#myCarousel" data-slide-to="1"></li>
+	<li data-target="#myCarousel" data-slide-to="2"></li>
+	<li data-target="#myCarousel" data-slide-to="3"></li>
+	<li data-target="#myCarousel" data-slide-to="4"></li>
+	<!--<li data-target="#myCarousel" data-slide-to="5"></li>
+	<li data-target="#myCarousel" data-slide-to="6"></li>
+	<li data-target="#myCarousel" data-slide-to="7"></li>
+	<li data-target="#myCarousel" data-slide-to="8"></li>-->
+</ol>
+
+<!-- Wrapper for slides -->
+<div class="carousel-inner" role="listbox" ><!--style="background-image:url({{ url_for('static', filename='img/Vendor.jpg') }});">-->
+	<div class="item active" style="background-image:url({{ url_for('static', filename='img/Vendor.jpg') }});">
+		<div class="carousel-content" style="padding-top: 60px;">
+			<div style="margin: 0 auto;">
+				<p style="padding-top: 100px; font-size: larger;">
+					<b style="font-size: 30px;">Fresh food</b><br>
+‘Eating well is a form of self respect’ we say, and we respect you do that by providing all the goodness in what you eat. We sell you fresh fruits, vegetables and food products so that you get quality nutrition and taste which you deserve. 
+We guarantee you to deliver good quality and fresh products you will just love.
+</p>
+			</div>
+		</div>
+	</div>
+	<div class="item" style="background-image:url({{ url_for('static', filename='img/fruit.png') }});">
+		<div class="carousel-content" style="padding-top: 60px;">
+			<div style="margin: 0 auto">
+				<p style="padding-top: 100px;font-size: larger;">
+					<b style="font-size: 30px;">Fruits</b><br>
+					Healthy habit is a good habit! And eating good quality fruits makes it compete. 
+					You get good quality and variety of fruits here, taste, size and colour just the way you like it!                             
+					 </p>
+			</div>
+		</div>
+	</div>
+	<div class="item" style="background-image:url({{ url_for('static', filename='img/vegetable (1).png') }});">
+		<div class="carousel-content" style="padding-top: 60px;">
+			<div style="margin: 0 auto">
+				<p style="padding-top: 100px;font-size: larger;">
+					<b style="font-size: 30px;">Vegetables</b><br>
+					Buying vegetables gets easy with us. We provide you good quality vegetables right from the farms. You get quantity with quality here.                                 
+					 </p>
+			</div>
+		</div>
+	</div>
+	<!--<div class="item" style="background-image:url({{ url_for('static', filename='img/electronic.png') }});">
+		<div class="carousel-content" style="padding-top: 60px;">
+			<div style="margin: 0 auto">
+				<p style="padding-top: 100px;">
+					<b style="font-size: 25px;">Electronics</b><br>
+					Yes because every penny you spend should be worth! Electronic shopping is something you research before you buy. With us you get variety of options in variety of prices.
+					
+					 </p>
+			</div>
+		</div>
+	</div>
+	<div class="item"  style="background-image:url({{ url_for('static', filename='img/shopping.png') }}); ; width: 100%;">
+		<div class="carousel-content" style="padding-top: 60px;">
+			<div style="margin: 0 auto">
+				<p style="padding-top: 100px;">
+					<b style="font-size: 25px;">Shopping</b> <br>
+Price is what you pay, and value is what you get! When you shop with us you won’t regret paying because we value what you pay for. We provide you variety of options which will help you select any product according to your expectations. You'll have thousands of options just at one click.
+You get best quality products in variety of price range. 
+We make your shopping experience better!
+</p>
+			</div>
+		</div>
+	</div>-->
+	<div class="item" style="background-image:url({{ url_for('static', filename='img/gro (1).png') }});">
+		<div class="carousel-content" style="padding-top: 60px;">
+			<div style="margin: 0 auto">
+				<p style="padding-top: 100px; font-size: larger;">
+					<b style="font-size: 30px;">Grocery </b><br>
+Quality, quantity, price, taste, varieties, when you have so much to check, why not to get comfortable doing grocery shopping. We provide you all the details which will help you pick the best for you. Customer reviews and experience will help you know the product genuinely. 
+Right from kids to elder ones, all can shop easily with us. We provide you all the comfort and high quality products.
+
+</p>
+			</div>
+		</div>
+	</div>
+	<div class="item" style="background-image:url({{ url_for('static', filename='img/daily.png') }});">
+		<div class="carousel-content" style="padding-top: 60px;">
+			<div style="margin: 0 auto">
+				<p style="padding-top: 100px; color: black;font-size: larger;">
+					<b style="font-size: 30px;">Daily Essentials </b><br>
+					Rather than making a buy list and then getting it lost! Add everything comes to your mind in the cart, 
+					this way there is no option you forget anything back. Once you cover all your items order it at once. 
+					This will help you be always be in stock with your daily essentials. 
+</p>
+			</div>
+		</div>
+	</div>
+	<!--<div class="item" style="background-image:url({{ url_for('static', filename='img/grooming (1).png') }});">
+		<div class="carousel-content" style="padding-top: 60px;">
+			<div style="margin: 0 auto">
+				<p style="padding-top: 100px;font-size: larger;color: white;-webkit-text-stroke: 2px black; /* width and color */
+
+				font-family: sans; color: white;"</p>
+					<b style="font-size: 30px;">Grooming Essentials </b><br>
+					“You are your greatest asset. Put your time, effort and money into training, grooming, and encouraging yourself”.
+					 We provide you good quality grooming essentials according to your needs and expectations. 
+</p>
+			</div>
+		</div>
+	</div>
+	<div class="item" style="background-image:url({{ url_for('static', filename='img/Vendor.jpg') }});">
+		<div class="carousel-content" style="padding-top: 60px;">
+			<div style="margin: 0 auto">
+				<p style="padding-top: 100px;">
+					<b style="font-size: 25px;">Testimonials </b><br>
+					We value your reviews and experiences with the products we provide you, it not just help people to know about the products 
+					but also to improve us and make things better for you.
+					 To make sure we satisfy your expectations.
+
+</p>
+			</div>
+		</div>
+	</div>-->
+	
+	
+</div>         
+<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="background:transparent !important">
+	<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">
+		Previous</span> </a><a class="right carousel-control" href="#myCarousel" role="button"
+			data-slide="next" style="background:transparent !important"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true">
+			</span><span class="sr-only">Next</span> </a>
+</div>
+<img src="{{ url_for('static',filename='img/offer-strip.jpg') }}" width="100%" style="margin-top: 0px;">
+<br><br>
+
+
+<b><h3 style="text-align:center; color: #7364a7;"><b>Offers</b></h3>
+ <section id="offers-tab">
+
+ 	<div class="card-deck">
+  <div class="card">
+    <img src="{{ url_for('static',filename='img/1.png')}}" class="card-img-top" alt="...">
+    <div class="card-body">
+		<button>View Details</button>
+      <!--<h5 class="card-title" style="text-align: center;">Toys</h5>-->
+    </div>
+  </div>
+  <div class="card">
+    <img src="{{ url_for('static',filename='img/2.png')}}" class="card-img-top" alt="asain">
+    <div class="card-body">
+	  <!--<h5 class="card-title" style="text-align: center;">Bags</h5>-->
+	  <button >View Details</button>
+      
+    </div>
+  </div>
+  <div class="card">
+    <img src="{{ url_for('static',filename='img/3.png')}}" class="card-img-top" alt="...">
+    <div class="card-body">
+		<button >View Details</button>
+      <!--<h5 class="card-title" style="text-align: center;">Watches</h5>-->
+      
+    </div>
+  </div>
+</div>
+</section>
+<br>
+
+<div class="vendor">
+	<!-- <img src="{{ url_for('static',filename='img/Vendor.jpg') }}" style="height: 350px;"> -->
+	<h2 style="text-align: center; color: #7364a7; padding: 20px;"><b>Vendors near you</b></h2>
+		<!--<img src="{{ url_for('static',filename='img/Vendor.jpg') }}" width="100%" style="position: relative;">-->
+		
+	<div class="row" >
+		  <div class="column">
+			<div class="card2" >
+  <img src="{{ url_for('static',filename='img/Vendor-1.jpg') }}" class="image" style="width:50% height: 50%; ">
+  </div>
+  </div>
+  <div class="column">
+	<div class="card2" style="position:absolute;">
+<img src="{{ url_for('static',filename='img/Vendor-2.jpg') }}" class="image" style="width:50% height: 50%;  ">
+</div>
+</div>
+<div class="column">
+	<div class="card2" style="position:absolute;">
+<img src="{{ url_for('static',filename='img/Vendor-3.jpg') }}" class="image" style="width:50% height: 50%; ">
+</div>
+</div>
+<div class="column">
+	<div class="card2" style="position:absolute;">
+<img src="{{ url_for('static',filename='img/Vendor-4.jpg') }}" class="image" style="width:50% height: 50%; ">
+	</div>
+	</div>
+	</div>
+	</div>
+  </div>
+
+<!--<div class="container">
+	<img src="m4.jpg" alt="Denim Jeans" class="image">
+	<div class="overlay overlayLeft">
+		<div class="text">Left</div>
+	</div>
+</div>-->
+<br><br>
+<h1 style="color: #7364a7; text-align: center; width:100%; margin-top: -80px;"><b>Special Deals</b></h1>
+ <section id="offer-prod">
+	<br>
+	<p style="text-align: center; font-size: 30px;"><b> Men</b> </p>
+
+	
+	<div class="container">
+			<div class="row">
+		  		<div class="column">
+					<div class="card1">
+		  <img src="{{ url_for('static',filename='img/m4.jpg') }}" alt="Denim Jeans" class="image" style="width:50%">
+		  <h3>Jacket</h3>
+		  <p class="price">$19</p>
+		  <p><button type="button" class="button">Add to cart</button></p>
+		 
+		    </div>
+		  </div>
+
+		  <div class="column">
+		    <div class="card1">
+			  <img src="{{ url_for('static',filename='img/m1.jpg') }}" alt="Denim Jeans" class="image" style="width:50%">
+			  <h3>Blue shirt</h3>
+			  <p class="price">$19.99</p>
+			  <p><button type="button" class="button">Add to cart</button></p>
+		    </div>
+			  </div>
+			  
+			  <div class="column">
+			    <div class="card1">
+				    <img src="{{ url_for('static',filename='img/m2.jpg') }}" alt="Denim Jeans" style="width:50%; height: 110px">
+			  <h3>Sweater</h3>
+			  <p class="price">$19.99</p>
+			  <p><button type="button" class="button">Add to cart</button></p>
+			    </div>
+			  </div>
+		  
+		  <div class="column">
+		    <div class="card1">
+			  <img src="{{ url_for('static',filename='img/m4.jpg')}}" alt="Denim Jeans" style="width:50%">
+			  <h3>Formals</h3>
+			  <p class="price">$19.99</p>
+			  <p><button type="button" class="button">Add to cart</button></p>
+		    </div>
+		  </div>
+		</div>
+		</div>
+</section>
+	<center>
+	<button type="button" class="btn btn-outline-secondary" style="width: 50%;">View more</button>
+	</center>
+	<br>
+<hr>
+<section id="offer-sec">
+	<p style="text-align: center; font-size: 30px;"><b> Women</b> </p>
+	<div class="container">
+			<div class="row">
+		  		<div class="column">
+				<div class="card1">
+		  <img src="{{ url_for('static',filename='img/w1.jpg') }}" alt="Denim Jeans" style="width:50%">
+		  <h3> full-sleeve shirt</h3>
+		  <p class="price">$19.99</p>
+		  <p><button type="button" class="button">Add to cart</button></p>
+		    </div>
+		  </div>
+
+		  <div class="column">
+		    <div class="card1">
+		      <img src="{{ url_for('static',filename='img/w2.jpg') }}" alt="Denim Jeans" style="width:50%">
+			  <h2>Daily wear</h2>
+			  <p class="price">$29</p>
+			  <p><button type="button" class="button">Add to cart</button></p>
+		    </div>
+			  </div>
+			  
+			  <div class="column">
+			    <div class="card1">
+				    <img src="{{ url_for('static',filename='img/w3.jpg')}}" alt="Denim Jeans" style="width:50%">
+			  <h3>Dress floyd</h3>
+			  <p class="price">$49</p>
+			  <p><button type="button" class="button">Add to cart</button></p>
+			    </div>
+			  </div>
+		  
+		  <div class="column">
+		    <div class="card1">
+		      <h3>Skirt</h3>
+		      <img src="{{ url_for('static',filename='img/w4.jpg')}}" alt="Denim Jeans" style="width:50%">
+			  <p class="price">$19</p>
+			  <p><button type="button" class="button">Add to cart</button></p>
+		    </div>
+		  </div>
+		</div>
+		</div>
+</section>
+	<center>
+	<button type="button" class="btn btn-outline-secondary" style="width: 50%;">View more</button>
+	</center>
+<hr>
+
+<div class="about">
+	<a name="about-section"></a>
+
+	<!-- <p style="text-align: center; color: white; padding-top: 10px; font-size: 20px;">About Us </p>
+		<p style="text-align: center; color: grey;"><br> 
+	 -->
+<div class="contain">
+	<img src="{{ url_for('static',filename='img/About.jpg') }}" width="100%">
+   	<div class="txt">
+    <h2 style=" text-align:center;">About Us</h2>
+    <p style="text-indent: all;">Looking for secured shopping, here we come right on a click.
+			We are known, trusted and nearby. Keeping local is vocal in mind, we provide products from near-by stores like fresh fruits, grocery, baby products, vegetables, milk products, electronic items and components, etc. Online shopping will no more be time consuming and hectic task, we provide you enhanced shopping cart to secured single page checkout avoids complexity and improves customer conversion rate. We are the Indian online store providing you with simple navigation, guest checkout option to enable a fast and easy checkout process, implementing security badges like SSL certificates.</p>
+		<p>	We provide you offers you would like to never miss, also coupons and vouchers. We help you compare prices from all the near-by store for the best deals.
+			We support each and ever business and hence provide their location and directions to the shop, also their phone numbers and address. The best part is you can place order and collect it from the store and also return it if you are not satisfied with the product. Whole shop is at your click what else you need. 
+			Luxury, offers, guarantee, best products, etc. all together. Also you don’t need to fear if you are paying online, we take full care of the transactions you make as we verify you using a phone call, also you sign-up using a verified email account or Facebook account which makes your connection with us and other customers total safe and tension free.
+			We believe in quality and severing you the best so we take customer’s reviews for products as well as experience which will help us maintain our quality and serve you the best.</p>
+  </div>
+</div>
+</div>
+<!--<hr style="border: 0.5px solid grey;">-->
+
+<footer style="margin-top: -60px;">
+	<div class="go-to-top" style="background-color: #a39ac7; font-size: 25px; font-family:'Abel';">
+		<center>
+		<a href="#" style="text-align: center; color: #1a152c;"><i>Back to top</i></a>
+		</center>
+	</div>
+
+		 <div class="container1" style="background-color: #1a152c;">
+		   
+		            <div class="row">
+		            <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12">
+		                <ul class="adress">
+							<br>
+							<a name="contact-section"></a>
+		                     <span>Address</span>    
+		                     <li>
+		                        <p style="font-family: 'Roboto';">Lorem ipsum dolor sit amet, vero omnis vocibus</p>
+		                      </li>
+		                           
+		                      <li>
+		                        <p>+90 1234 56789</p>
+		                      </li>
+		                           
+		                      <li>
+		                        <p>innobytes.net@gmail.com</p>
+		                      </li>
+		                 </ul>
+		            </div>
+		            <div class="vl"></div>
+		            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+		                <ul class="contact">
+							<br>
+		                     <span >Quick Links</span>    
+		                     <li>
+		                        <a href="#">Home</a>
+		                      </li>
+		                           
+		                      <li>
+		                         <a href="#">Offers</a>
+		                      </li>
+		                           
+		                      <li>
+		                        <a href="#">Blog</a>
+		                      </li>
+		                           
+		                      <li>
+		                        <a href="#">Contact Us</a>
+		                     </li>
+		                </ul>
+		            </div>
+					<div class="vl"></div>
+					<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+		               <ul class="social">
+		                   <span ><br>Follow us</span>    
+                           <li>
+                                <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                           </li>
+                          
+                           <li>
+                                <a href="#"><i class="fa fa-github fa-2x"></i></a>
+                           </li>
+                            
+                           <li>
+                                <a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
+                           </li>
+                           
+                           <li>
+                                <a href="#"><i class="fa fa-tumblr fa-2x"></i></a>
+                           </li>
+                            
+                           <li>
+                                <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
+                          </li>
+                          
+                 </ul>
+	   </div>
+	   </div>
+       </div>
+    </div>
+	<hr style="border: 1px solid white;">
+    &copy; Copyright 2020 All rights reserved
+    <p class="float-right">Terms and Conditions | <a href="policy.html" style="color: white;"> Privacy Policy</a> </p>
+    </footer>
+</footer>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

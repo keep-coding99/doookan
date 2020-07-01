@@ -1,0 +1,42 @@
+<html>
+<head>
+    <meta http-euiv="Content-Type" content="text/html; charset utf=8" />
+    <title> Login</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/login.css') }}">
+
+    <link href="https:// fonts.googleapis.com/css?family=Play" rel="stylesheet">
+</head>
+
+<body style="background-image: url({{ url_for('static', filename='img/Login2.jpg') }});width: 100%; background-size: cover; overflow-x: hidden;background-attachment: fixed;background-position: center;">
+    <!--<div style="background-image: url({{ url_for('static', filename='img/village.jpg') }}); background-size: auto;">
+       <img src="{{url_for('static', filename='img/village.jpg')}}" style="width: 100%;">-->
+    <div class="signin" style="margin-top: 100px;background: rgba(44,62,80,0.9);">
+    <form method="POST" action="/login">
+        <h2 style="color:white">Log In</h2>
+        <h4 style="text-align: left;">User:</h4>
+        <input type="text" name="un1" placeholder="Username"><br>
+        <input type="password" name="pass1" placeholder="Password"><br><br>
+        <a href="login.html"><button type="submit" style="height: 40px; width: 70px;background-color: white; color: black; border-radius: 15px;">Login</button></a><br><br>
+        <div id="container"> 
+            <a href="for.html" style="margin-right:0px; font-size:13px; font-family:Tahoma, Geneva, sans-serif;">
+                Forgot password?</a>
+        </div><br><br>
+        Don't have account?<a href="reg_user.html" style="font-family:'Play', sans-serif;">&nbsp;Sign Up</a>
+        <br><br>
+        Vendor?<a href="login_v.html" style="font-family:'Play', sans-serif;">&nbsp;Vendor login</a>
+         <br><br> Return <a href="landing.html" style="font-family:'Play', sans-serif;">&nbsp;Back </a>          
+    
+      <!--   <div id="msg">Link sent on your email successfully!</div>
+ -->
+    <script>
+    function myFunction() {
+        var x = document.getElementById("msg");
+        x.className = "show";
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    }
+</script>
+    </form>
+    </div>
+   <!-- </div>-->
+</body>
+</html>

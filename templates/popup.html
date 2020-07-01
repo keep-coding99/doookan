@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Location</title>
+</head>
+<body>
+
+<!-- <h2>Help us find better results for you,by clicking allow</h2>
+ -->
+myFunction()
+<p id="demo"></p>
+
+<script>
+function myFunction() 
+{
+  var txt;
+  if (confirm("Help us serve you better, Press Ok to allow location access!")) 
+  {
+    txt = "Access Given!";
+
+  } 
+  else 
+  {
+    txt = "Access Denied!";
+  }
+  document.getElementById("demo").innerHTML = txt;
+}
+</script>
+
+</body>
+</html>

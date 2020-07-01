@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dookan.com</title>
+	<meta charset="utf-8">
+	<!-- for responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/media.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Shadows Into Light' rel='stylesheet'> -->
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+        $('.carousel').carousel({
+            interval: 5000
+        });
+    });
+</script>
+	
+</head>
+ 
+<body style="overflow-x: hidden;">
+<div class="bg-img"></div>
+   
+<header>
+	<!--<div id="nav-belt"> 
+		<div class="nav-left">
+			<div id="nav-logo">
+			<a href="#" class="nav-logo-link"></a>	
+			</div>
+		</div>-->
+
+		<!--<div class="nav-right">
+			<div id="nav-search"> 
+				<div class="nav-left">
+					<input type="Search" autocomplete="off" placeholder="Search products.." style="line-height: 35px; ">
+				</div>
+				<div class="nav-right">
+					<form>
+					<button type="submit" style="height: 40px; "><i class="fa fa-search"></i></button>
+					</form>
+				</div>
+			</div>
+		</div>-->
+	</div> 
+	<!--<div class="bg-img"></div>-->
+
+	<div id="nav-logo" class="float-left">
+    <a href="land-3.html" class="nav-logo-link">
+  <img src="{{ url_for('static',filename='img/logo.png') }}" style="height: 50px; width: 90px; padding-bottom: 8px; margin-top: -15px; margin-left: -25px;">	
+ </a>
+ </div>		
+	<div class="float-right" style="margin-right: 5px; margin-top: 15px;">
+	
+		<button class="login">Login</button>
+		<form class="form-inline my-2 my-lg-0" style="padding-top: 5px; float: right; color:#7364a7; margin-top: 0%; margin-left: 10px;">
+			<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+			<button style="background-color:#7364a7; color: white; " class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+         <!--shopping cart-->
+        <i class="fa" style="font-size:24px; color: #7364a7; margin-left: 20px;">&#xf07a;</i>
+	    <span class='badge badge-warning' id='lblCartCount'> 0 </span>
+        
+        </form>
+	</div>
+<nav class="navbar navbar-expand-lg " style="background-color:#7364a7; width: 100%; margin: 5px;">
+	<button class="navbar-toggler" style="color: #7364a7;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon" style="color: #7364a7;"></span>
+	</button>
+  
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+	  <ul class="navbar-nav mr-auto">
+		<li class="nav-item active">
+		  <a class="nav-link" href="land-3.html">HOME <span class="sr-only">(current)</span></a>
+		</li>
+		<li class="nav-item dropdown">
+		  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			ALL	CATEGORIES
+		  </a>
+		  <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #a39ac7;">
+			<a class="dropdown-item" href="#">Fruits</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Vegetables</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Grocery</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Daily Essentials</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Tools and Electricals</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Grooming Essentials</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Baby Essentials</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Best Sellers</a>
+		  </div>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="#">ABOUT US</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">PRODUCTS</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">OFFERS</a>
+		  </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          LANGUAGE
+          </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #a39ac7;">
+          <a class="dropdown-item" href="#">Hindi</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">English</a>
+        </div>
+        </li>
+		  <li class="nav-item">
+        <a class="nav-link" href="#contact-section">CONTACT US</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="media.html">MEDIA</a>
+		  </li>
+      </ul>
+    </div>
+</nav>
+    <br><br>
+      <b><h3 style="text-align:center; color: #7364a7; padding-bottom: 20px;"><b>Testimonials</b></h3>
+      
+      <div>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000"
+            data-pause="hover" style="background-image:{{ url_for('static',filename='img/comments.png') }};">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+            </ol>
+      
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox" style="background-image:url({{ url_for('static', filename='img/comments.png') }});">
+                <div class="item active">
+                    <div class="carousel-content" style="padding-top: 60px;">
+                        <div style="margin: 0 auto;">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vestibulum pellentesque diam, quis vehicula odio ultricies at. In ante dolor, convallis euismod sem a, scelerisque laoreet arcu. Suspendisse potenti. 
+                                Ut eleifend elit sem, at imperdiet dui suscipit in. In malesuada bibendum mauris et convallis.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-content" style="padding-top: 60px;">
+                        <div style="margin: 0 auto">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vestibulum pellentesque diam, quis vehicula odio ultricies at. In ante dolor, convallis euismod sem a, scelerisque laoreet arcu. Suspendisse potenti. 
+                                Ut eleifend elit sem, at imperdiet dui suscipit in.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-content" style="padding-top: 60px;">
+                        <div style="margin: 0 auto">
+                            <p>
+                                Aenean interdum augue tellus, in porttitor enim eleifend lacinia. Ut quis risus placerat, ornare dui vel, elementum justo. Donec neque mauris, auctor at consequat eu, semper at est. 
+                                Nunc aliquam nulla vitae odio gravida dignissim. Maecenas ultricies accumsan mi in sagittis.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-content" style="padding-top: 60px;">
+                        <div style="margin: 0 auto">
+                            <p>
+                                Nunc ullamcorper facilisis sodales. Nam lectus dui, dictum at eros ac, 
+                                gravida tincidunt nibh. Duis leo elit, ullamcorper ut mollis nec, aliquet id magna. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-content" style="padding-top: 60px;">
+                        <div style="margin: 0 auto">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vestibulum pellentesque diam, quis vehicula odio ultricies at. In ante dolor, convallis euismod sem a, scelerisque laoreet arcu. Suspendisse potenti. 
+                                Ut eleifend elit sem, at imperdiet dui suscipit in.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>         
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">
+                    Previous</span> </a><a class="right carousel-control" href="#myCarousel" role="button"
+                        data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true">
+                        </span><span class="sr-only">Next</span> </a>
+        </div>
+    </div>
+    <br><br>
+    <b><h3 style="text-align:center; color: #7364a7;"><b>Videos</b></h3>
+      <div id="vid">
+        <div class="row">
+            <div class="column">
+        <div id="vid1">
+      <video width="400" style="display:block; margin:0 auto;" height="250" controls autoplay>
+      <source src="{{ url_for('static',filename='img/1.mp4') }}" type="video/mp4">
+              <source src="1.ogg" type="video/ogg">
+            </video>
+            </div>
+            </div>
+            <div class="column" >
+                    <div id="vid2">
+              <video width="400" style="display:block; margin:0 auto;" height="250" controls autoplay>
+              <source src="{{ url_for('static',filename='img/2.mp4') }}" type="video/mp4">
+              <source src="2.ogg" type="video/ogg">
+            </video>
+            </div>
+           </div>
+           
+           <div class="column">
+            <div id="vid3">
+              <video width="400" style="display:block; margin:0 auto;" height="250" controls autoplay>
+              <source src="{{ url_for('static',filename='img/3.mp4') }}" type="video/mp4">
+              <source src="3.ogg" type="video/ogg">
+            </video>
+            </div>
+            </div>
+            <div class="column" >
+                <div id="vid2">
+          <video width="400" style="display:block; margin:0 auto;" height="250" controls autoplay>
+          <source src="2.mp4" type="video/mp4">
+          <source src="2.ogg" type="video/ogg">
+        </video>
+        </div>
+       </div>
+       <div class="column" >
+        <div id="vid2">
+        <video width="400" style="display:block; margin:0 auto;" height="250" controls autoplay>
+        <source src="2.mp4" type="video/mp4">
+        <source src="2.ogg" type="video/ogg">
+        </video>
+        </div>
+        </div>
+        <div class="column" >
+            <div id="vid2">
+        <video width="400" style="display:block; margin:0 auto;" height="250" controls autoplay>
+        <source src="2.mp4" type="video/mp4">
+        <source src="2.ogg" type="video/ogg">
+        </video>
+        </div>
+        </div>
+            </div>
+    </div>
+
+    <br><br>
+    <b><h3 style="text-align:center; color: #7364a7; margin-top: 5px;"><b>Partners</b></h3>
+    <div style="text-align:center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    <!--<b><h3 style="text-align:center; color: #7364a7; margin-top: -110px; margin-bottom: 30px;"><b>Partners</b></h3>
+    <div style="text-align:center; padding-left:40px;">
+        <span class="dot" style="background-color: rgb(231, 225, 225); height: 250px;width: 250px;"></span>
+        <span class="dot" style="background-color: rgb(231, 225, 225); height: 250px;width: 250px;"></span>
+        <span class="dot" style="background-color: rgb(231, 225, 225); height: 250px;width: 250px;"></span>
+        <span class="dot" style="background-color: rgb(231, 225, 225); height: 250px;width: 250px;"></span>
+        <span class="dot" style="background-color: rgb(231, 225, 225); height: 250px;width: 250px;"></span>
+      </div>-->
+
+      <footer style="margin-top: 0px;">
+        <div class="go-to-top" style="background-color: #a39ac7; font-size: 25px;">
+            <center>
+            <a href="#" style="text-align: center; color: #1a152c;">Back to top</a>
+            </center>
+        </div>
+    
+             <div class="container1" style="background-color: #1a152c;">
+               
+                        <div class="row">
+                        <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12">
+                            <ul class="adress">
+                              <a name="contact-section"></a>
+                                <br>
+                                 <span>Address</span>    
+                                 <li>
+                                    <p style="font-family: 'Roboto';">Lorem ipsum dolor sit amet, vero omnis vocibus</p>
+                                  </li>
+                                       
+                                  <li>
+                                    <p>+90 1234 56789</p>
+                                  </li>
+                                       
+                                  <li>
+                                    <p>info@gmail.com</p>
+                                  </li>
+                             </ul>
+                        </div>
+                        <div class="vl"></div>
+                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                            <ul class="contact">
+                                <br>
+                                 <span >Quick Links</span>    
+                                 <li>
+                                    <a href="#">Home</a>
+                                  </li>
+                                       
+                                  <li>
+                                     <a href="#">Offers</a>
+                                  </li>
+                                       
+                                  <li>
+                                    <a href="#">Blog</a>
+                                  </li>
+                                       
+                                  <li>
+                                    <a href="#">Contact Us</a>
+                                 </li>
+                            </ul>
+                        </div>
+                        <div class="vl"></div>
+                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                           <ul class="social">
+                               <span ><br>Follow us</span>    
+                               <li>
+                                    <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                               </li>
+                              
+                               <li>
+                                    <a href="#"><i class="fa fa-github fa-2x"></i></a>
+                               </li>
+                                
+                               <li>
+                                    <a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
+                               </li>
+                               
+                               <li>
+                                    <a href="#"><i class="fa fa-tumblr fa-2x"></i></a>
+                               </li>
+                                
+                               <li>
+                                    <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
+                              </li>
+                              
+                     </ul>
+           </div>
+           </div>
+           </div>
+        </div>
+    <hr style="border: 1px solid white;">
+    &copy; Copyright 2020 All rights reserved
+    <p class="float-right">Terms and Conditions | Privacy Policy</p>
+    </footer>
+</body>
+</html>

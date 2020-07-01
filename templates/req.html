@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Request page</title>
+</head>
+<body>
+  <div id="payment-div"></div>
+
+  <script src="https://www.cashfree.com/assets/cashfree.sdk.v1.2.js" type="text/javascript"></script>
+  <script type="text/javascript">
+  (function() {
+    var data = {};
+    data.orderId = "1234";
+    data.orderAmount = 450;
+    data.customerName = "Seth";
+    data.customerPhone = "900XXXXX21";
+    data.customerEmail = "example@example.com";
+    data.returnUrl = "https://mysite.com/payment/response";
+    data.notifyUrl = "https://mysite.com/payment/notify";
+    data.appId = "abcd123e";
+    data.paymentToken = "BUI100115";
+
+    var callback = function (event) {
+        var eventName = event.name;
+        switch(eventName) {
+          case "PAYMENT_REQUEST":
+             console.log(event.message);
+             break;
+          default:
+             console.log(event.message);
+         };
+    }
+
+    var config = {};
+    config.layout = {view: "popup", width: "650"};
+    config.mode = "TEST"; //use PROD when you go live
+    var response = CashFree.init(config);
+    if (response.status == "OK") {
+      cfInitialized = true;
+    } else {
+      //handle error
+       console.log(response.message);
+    }
+    // Make sure you put id of your payment button that triggers the payment flow in the below statement.
+    $("submit-order").click(function () {
+      if (cfInitialized) {
+        CashFree.makePayment(data, callback);
+      }
+    });
+
+    })();
+  </script>
+
+</body>
+</html>
+
+<!-- Paste below code base before the closing tag(</body>) of body element -->

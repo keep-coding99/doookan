@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add to Cart Page</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}" media="screen" type="text/css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript" src=""></script>
+</head>
+
+<body>
+
+<div id="site">
+	<header id="masthead">
+		<!--<h1>Winery <span class="tagline">Wines for web developers since 1999</h1>-->
+			<h2 style="text-align: center; margin-left: 300px; margin-top: 0px;">Products</h2>
+	</header>
+	<div id="content">
+		<div id="products">
+			<ul>
+				<li>
+					<div class="product-image">
+						<img style="  height: 150px; width: 150px; border-radius: 50%;" src="{{url_for('static',filename='img/m4.jpg')}}" alt="" />
+					</div>
+					<div class="product-description" data-name="Black Jacket" data-price="5">
+						<h3 class="product-name">Black Jacket</h3>
+						<p class="product-price">&euro; 5</p>
+						<form class="add-to-cart" action="#" method="post">
+							<div>
+								<label for="qty-1">Quantity</label>
+								<input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+							</div>
+							<p><input type="submit" value="Add to cart" class="btn" onclick="myFunction()" /></p>
+						</form>
+					</div>
+				</li>
+				
+				<li>
+					<div class="product-image">
+						<img style="  height: 150px; width: 150px; border-radius: 50%;" src="{{url_for('static',filename='img/m1.jpg')}}" alt="" />
+					</div>
+					<div class="product-description" data-name="Classic Shirt" data-price="8">
+						<h3 class="product-name">Classic Shirt</h3>
+						<p class="product-price">&euro; 8</p>
+						<form class="add-to-cart" action="#" method="post">
+							<div>
+								<label for="qty-2">Quantity</label>
+								<input type="text" name="qty-2" id="qty-2" class="qty" value="1" />
+							</div>
+							<p><input type="submit" value="Add to cart" class="btn" onclick="myFunction()" /></p>
+						</form>
+					</div>
+				</li>
+				
+				<li>
+					<div class="product-image">
+						<img style="  height: 150px; width: 150px; border-radius: 50%;" src="{{url_for('static',filename='img/m2.jpg')}}" alt="" />
+					</div>
+					<div class="product-description" data-name="Classic Sweater" data-price="11">
+						<h3 class="product-name">Classic Sweater</h3>
+						<p class="product-price">&euro; 11</p>
+						<form class="add-to-cart" action="#" method="post">
+							<div>
+								<label for="qty-3">Quantity</label>
+								<input type="text" name="qty-3" id="qty-3" class="qty" value="1" />
+							</div>
+							<p><input type="submit" value="Add to cart" class="btn" onclick="myFunction()" /></p>
+						</form>
+					</div>
+				</li>
+				
+				<li>
+					<div class="product-image">
+						<img style="  height: 150px; width: 150px; border-radius: 50%;" src="{{url_for('static',filename='img/w1.jpg')}}" alt="" />
+					</div>
+					<div class="product-description" data-name="Cotton Sweater" data-price="5">
+						<h3 class="product-name">Cotton Sweater</h3>
+						<p class="product-price">&euro; 5</p>
+						<form class="add-to-cart" action="#" method="post">
+							<div>
+								<label for="qty-1">Quantity</label>
+								<input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+							</div>
+							<p><input type="submit" value="Add to cart" class="btn" onclick="myFunction()" /></p>
+						</form>
+					</div>
+				</li>
+				<li>
+					<div class="product-image">
+						<img style="  height: 150px; width: 150px; border-radius: 50%;" src="{{url_for('static',filename='img/w2.jpg')}}" alt="" />
+					</div>
+					<div class="product-description" data-name="Summer T-Shirts" data-price="5">
+						<h3 class="product-name">Summer T-shirts</h3>
+						<p class="product-price">&euro; 5</p>
+						<form class="add-to-cart" action="#" method="post">
+							<div>
+								<label for="qty-1">Quantity</label>
+								<input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+							</div>
+							<p><input type="submit" value="Add to cart" class="btn" onclick="myFunction()" /></p>
+						</form>
+					</div>
+				</li>
+				<li>
+					<div class="product-image">
+						<img style="  height: 150px; width: 150px; border-radius: 50%;" src="{{url_for('static',filename='img/w3.jpg')}}" alt="" />
+					</div>
+					<div class="product-description" data-name="Summer Frock" data-price="5">
+						<h3 class="product-name">Summer Frock</h3>
+						<p class="product-price">&euro; 5</p>
+						<form class="add-to-cart" action="#" method="post">
+							<div>
+								<label for="qty-1">Quantity</label>
+								<input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+							</div>
+							<p><input type="submit" value="Add to cart" class="btn" onclick="myFunction()" /></p>
+						</form>
+					</div>
+				</li>
+
+
+			</ul>
+			<form action="cart.html">
+			<p style="text-align: center; margin-bottom: 20px; font-size: 18px; color: #1a152c" name="button"><input type="submit" value="Proceed" class="btn" /></p>
+		</div>
+	</div>
+	
+	
+
+</div>
+<script>
+function myFunction() {
+  alert("Added to Cart!");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,410 @@
+html,body
+{
+	margin: 0;
+	font-family: arial;
+	line-height: 15 px;
+	font-size: 15px;
+	font-family: Roboto;
+	overflow-x: hidden;
+}
+
+*
+{
+	box-sizing: border-box;
+}
+
+/*a
+{
+	color: #a39ac7;
+	background-color: #a39ac7;
+}*/
+
+hover
+{
+	color: #FFFFFF;
+}
+
+header
+{
+	background-color: white;
+	height: 80px;
+}
+
+.bg-img
+{
+	background-image: url("shop1.jpg");
+	background-repeat: no-repeat;
+
+	  /* Add the blur effect */
+	 /*filter: blur(3px);
+
+	 -webkit-filter: blur(8px);
+
+	  /* Full height 
+	 height: 100%;
+
+	   Center and scale the image nicely 
+	 /*background-position: center;
+	 
+	 
+	 background-size: cover;
+*/
+}
+
+.nav-left
+{
+	position:relative; 
+	float: left;   /* for lwft nav, float shld be kept left*/
+	width: auto ;
+	display: inline-block;
+	padding-right: 90px;
+}
+
+.nav-right
+{	
+	margin-top: 0px;
+	position:relative; 
+	float: right;  /* for rgt nav, float shld be kept rigt*/
+	width: auto ;
+	display: inline-block;
+	
+}
+#nav-logo
+{	
+	padding: 10px 20px 0 25px;
+	position: relative;
+	width: 150px;
+}
+#nav-logo .nav-logo-link
+{
+	background: transparent url('logo.png') no-repeat top left ;
+	background-size: 90px;
+	width: 150px;
+	height: 50px;
+	display: block;
+}
+
+.login{
+	background-color:#7364a7; 
+	border:none; color:white; 
+	margin-top: 5px; 
+	margin-right: 10px; 
+	padding: 6px;
+	border-radius: 5px;
+}
+.nav-logo-link{
+	background-color:#7364a7; 
+	border:none; color:white; 
+	margin-top: 5px; 
+	margin-right: 10px; 
+	padding: 6px;border-radius: 5px;
+}
+li a:hover:not(.active) {
+	background-color: #a39ac7;
+	color: white;
+	
+  }
+.navbar-nav > li{
+	margin-left:20px;
+	margin-right:20px;
+  }
+#nav-search
+{
+	position:relative;
+	display: block ;
+	overflow: hidden ;
+	padding-top: 10px ;
+	padding-right:85px ;
+}
+
+#nav-search .nav-left:hover
+{
+	background-color: #B8B3B7;
+}
+
+#nav-search .nav-left:visited {
+	color: pink;
+	background-color: transparent;
+	text-decoration: none;
+  }
+  
+
+#nav-search .nav-right  button 
+{
+    display:block;
+    /*text-align: left;
+    */
+    width: 85%;
+    height: 40%;
+    /*margin: 0;*/
+    padding: 2px;
+ }
+
+ .badge {
+	padding-left: 9px;
+	padding-right: 9px;
+	-webkit-border-radius: 9px;
+	-moz-border-radius: 9px;
+	border-radius: 9px;
+  }
+  
+  .label-warning[href],
+  .badge-warning[href] {
+	background-color: white;
+  }
+  #lblCartCount {
+	content:"100";
+    position: absolute;
+	  font-size: 10px;
+	  background: #910f0f;
+	  color: white;
+	  padding: 0 5px;
+	  vertical-align: top;
+	  height:2rem;
+    top:1rem;
+    right:.75rem;
+	width:2rem;
+	line-height: 2rem;;
+	  margin-left: -10px; 
+  }
+
+ .nav-right-cat
+{
+	position:absolute; 
+	float: right;   /* for rgt nav, float shld be kept rigt*/
+	width: auto ;
+	display: inline-block;
+	padding-top: 65px;
+	padding-left: 655px; 
+}
+
+@media (min-width: 1200px)
+{
+	.container
+	{
+		width: 1150px;
+		height: 320px;
+	}
+}
+
+.btn-toolbar .btn, .btn-toolbar .btn-group, .btn-toolbar .input-group {
+    text-align:center;
+    align-content:center;
+  }
+  
+  .btn-group {
+     margin:0 auto;
+     display:block;
+     margin-top: 100px;
+     padding-left: 540px;
+  }
+  .btn-toolbar > .btn, .btn-toolbar > .btn-group, .btn-toolbar > .input-group {
+    margin-left:5px;
+  }
+  
+  .btn-group, .btn-group-vertical {
+    position:relative;
+    display:inline-block;
+    vertical-align:middle;
+  }
+.box {
+  background-color: white;
+  width: 700px;
+  height: 400px;
+  border: 15px;
+  padding: 50px;
+  margin: 20px;
+  margin-top: 50px;
+  left: 50%;
+  margin-left: 400px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  
+}
+.box td
+{
+    float: left;
+    padding: 10px;
+}
+#desc
+{
+    padding-left: 50px;
+}
+.boxt {
+    width:300px;
+    height:300px;
+    background-color:#d9d9d9;
+    position:fixed;
+    margin-left:-150px; /* half of width */
+    margin-top:-150px;  /* half of height */
+    top:50%;
+    left:50%;
+}
+
+					/*for footer*/
+
+footer{
+	color: white;
+     padding:70px 0px;
+     width:100%;
+     height:300px;
+     margin-bottom:5px;
+	 margin-top:50px;
+	 box-shadow: 0 50vh 0 50vh #1a152c;
+}	      
+.dropdown-menu
+{
+	background-color: #c34ff1;
+}
+
+footer ul li{
+    padding:5px 0px;
+}
+.vl {
+	border-left:1px solid white;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	height: 300px;
+  }
+@media screen and(min-width: 1000px)
+{
+	.cotainer1
+	{
+		width: 1000px;
+		height: 300px;
+	}
+}
+.vendor
+{
+	background-image: url("Vendor.jpg");
+}
+.about
+{
+	display: block;
+	overflow: hidden;
+	background-image: url("About.jpg");
+	height: 300px;
+	width: 100%;
+}
+.adress span , .contact span , .social span{
+   color: #FFF; 
+   font-weight: 800; 
+   padding-bottom: 10px; 
+   margin-bottom: 20px;
+   display: block;
+   text-transform: uppercase;
+   font-size: 20px;
+   letter-spacing: 3px;
+}
+ 
+.adress li p , .contact li a , .social li a{
+    color:#FFF;
+    letter-spacing: 2px;
+    text-decoration:none;
+    font-size:15px;
+}
+.card-body
+{
+	align-self: center;
+}
+
+.social li{
+    float:left;
+}
+
+.adress , .contact , .social {
+    list-style: none;
+}
+
+.fa{
+    color:white;
+    margin-right: 15px;
+    font-size:14px;
+}
+
+.nav-item a{
+	color: #FFFFFF;
+}					/*for footer*/
+
+footer{
+	color: white;
+     padding:70px 0px;
+     width:100%;
+     height:300px;
+     margin-bottom:5px;
+	 margin-top:50px;
+	 box-shadow: 0 50vh 0 50vh #1a152c;
+}	      
+.dropdown-menu
+{
+	background-color: #c34ff1;
+}
+
+footer ul li{
+    padding:5px 0px;
+}
+.vl {
+	border-left:1px solid white;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	height: 300px;
+  }
+@media screen and(min-width: 1000px)
+{
+	.cotainer1
+	{
+		width: 1000px;
+		height: 300px;
+	}
+}
+.vendor
+{
+	background-image: url("Vendor.jpg");
+}
+.about
+{
+	display: block;
+	overflow: hidden;
+	background-image: url("About.jpg");
+	height: 300px;
+	width: 100%;
+}
+.adress span , .contact span , .social span{
+   color: #FFF; 
+   font-weight: 800; 
+   padding-bottom: 10px; 
+   margin-bottom: 20px;
+   display: block;
+   text-transform: uppercase;
+   font-size: 20px;
+   letter-spacing: 3px;
+}
+ 
+.adress li p , .contact li a , .social li a{
+    color:#FFF;
+    letter-spacing: 2px;
+    text-decoration:none;
+    font-size:15px;
+}
+.card-body
+{
+	align-self: center;
+}
+
+.social li{
+    float:left;
+}
+
+.adress , .contact , .social {
+    list-style: none;
+}
+
+.fa{
+    color:white;
+    margin-right: 15px;
+    font-size:14px;
+}
+
+.nav-item a{
+	color: #FFFFFF;
+}

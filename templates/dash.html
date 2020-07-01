@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dookan.com</title>
+	<meta charset="utf-8">
+	<!-- for responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Shadows Into Light' rel='stylesheet'>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+
+html,body
+{
+	margin: 0;
+	font-family: arial;
+	line-height: 15 px;
+	font-size: 15px;
+    font-family: Roboto;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+*
+{
+	box-sizing: border-box;
+}
+
+header
+{
+	background-color: white;
+    height: 10px;
+    width: 100%;
+    font-family: Roboto;
+    margin-: 0px;
+}
+.dropdown-menu
+{
+	background-color: #c34ff1;
+}
+
+.nav-left
+{
+	position:relative; 
+	float: left;   /* for lwft nav, float shld be kept left*/
+	width: auto ;
+	display: inline-block;
+	padding-right: 90px;
+}
+
+.nav-right
+{	
+	margin-top: 0px;
+	position:relative; 
+	float: right;  /* for rgt nav, float shld be kept rigt*/
+	width: auto ;
+	display: inline-block;
+	
+}
+.nav-item a{
+	color: #FFFFFF;
+}
+#nav-logo
+{	
+	padding: 10px 20px 0 25px;
+	position: relative;
+	width: 150px;
+}
+#nav-logo .nav-logo-link
+{
+	background: transparent url('logo.png') no-repeat top left ;
+	background-size: 90px;
+	width: 150px;
+	height: 50px;
+	display: block;
+}
+
+.nav-logo-link{
+	background-color:#7364a7; 
+    border:none; 
+    color:white; 
+	margin-top: 5px; 
+	margin-right: 10px; 
+    padding: 6px;
+    border-radius: 5px;
+}
+li a:hover:not(.active) {
+	background-color: #a39ac7;
+	color: white;
+  }
+.navbar-nav > li{
+	margin-left:20px;
+	margin-right:20px;
+  }
+  
+ .nav-right-cat
+{
+	position:absolute; 
+	float: right;   /* for rgt nav, float shld be kept rigt*/
+	width: auto ;
+	display: inline-block;
+	padding-top: 65px;
+	padding-left: 655px; 
+}
+
+@media (min-width: 1200px)
+{
+	.container
+	{
+		width: 1150px;
+		height: 320px;
+	}
+}
+footer{
+	color: white;
+     padding:50px 0px;
+     width:100%;
+     height:300px;
+     margin-bottom:5px;
+     margin-top: 0px;
+	 box-shadow: 0 50vh 0 50vh #1a152c;
+}	 
+div{
+    font-family: Roboto;
+}     
+.dropdown-menu
+{
+	background-color: #c34ff1;
+}
+
+footer ul li{
+    padding:5px 0px;
+}
+.vl {
+	border-left:1px solid white;
+	margin-top: 10px;
+	margin-bottom: 30px;
+	height: 250px;
+  }
+@media screen and(min-width: 1000px)
+{
+	.cotainer1
+	{
+		width: 1000px;
+		height: 300px;
+	}
+}
+.adress span , .contact span , .social span{
+   color: #FFF; 
+   font-weight: 800; 
+   padding-bottom: 10px; 
+   margin-bottom: 20px;
+   display: block;
+   text-transform: uppercase;
+   font-size: 20px;
+   letter-spacing: 3px;
+}
+ 
+.adress li p , .contact li a , .social li a{
+    color:#FFF;
+    letter-spacing: 2px;
+    text-decoration:none;
+    font-size:15px;
+}
+.social li{
+    float:left;
+}
+
+.adress , .contact , .social {
+    list-style: none;
+}
+
+.fa{
+    color:white;
+    margin-right: 15px;
+    font-size:14px;
+}
+
+.nav-item a{
+	color: #FFFFFF;
+}
+
+label 
+{ display: inline-block;
+width: 400px; }
+
+input[type=number]
+{
+    width: 180px;
+}
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 8px;
+  font-size: 15px;
+}
+
+input[type=text] {
+  background-color: #f1f1f1;
+}
+input[type=submit] {
+  background-color: #7364a7;
+  color: #fff;
+  cursor: pointer;
+}
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 78;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+  font-family: Roboto;
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9; 
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}
+
+</style>
+</head>
+ 
+<body>
+   
+<header>
+  <div id="nav-logo" class="float-left">
+    <a href="land-3.html" class="nav-logo-link">
+  <img src="{{ url_for('static',filename='img/logo.png') }}" style="height: 50px; width: 90px; padding-bottom: 8px; margin-top: -15px; margin-left: -25px;">	
+ </a>
+ </div>	
+	<div class="float-right" style="margin-right: 5px; margin-top: 20px; margin-right: 20px;">
+    
+    <p style="color: #7364a7;"><b>Hello Vendor</b></p>
+    </div>
+    <nav class="navbar navbar-expand-lg " style="background-color:#7364a7; width: 100%; margin: 0px;">
+        <button class="navbar-toggler" style="color: #7364a7;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" style="color: #7364a7;"></span>
+        </button>
+  
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+	  <ul class="navbar-nav mr-auto">
+		<li class="nav-item active">
+		  <a class="nav-link" href="land-3.html" style="margin-left: -35px;">HOME <span class="sr-only">(current)</span></a>
+		</li>
+		  <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          LANGUAGE
+          </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #a39ac7;">
+          <a class="dropdown-item" href="#">Hindi</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">English</a>
+        </div>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#contact-section">CONTACT US</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="media.html">MEDIA</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="myprods.html">MY PRODUCTS</a>
+        </li>
+	  </ul>
+    </div>
+</nav>
+</header>
+<br><br><br>
+<div style="background-color: #1a152c; margin-top: 59px; height: 80px; color: white;">
+<p style="font-size: 30px; text-align: center; padding-top: 20px;">Welcome Shop name</p>
+</div>
+<div style="color: white; text-align: center; padding: 20px; background-image: url({{ url_for('static', filename='img/Dash.jpg') }});width: 100%; background-size: cover; overflow-x: hidden;">
+        <form autocomplete="off" class="form" method="POST" action="#">
+            <h3><b>Enter details of the product that you wish to sell</b></h3><br><br>
+          <label for="pnames"><b>Name of the product:</b></label>
+          <input type="text" name="pnames" maxlength="20">
+          <br><br>
+          <label for="prodes"><b>Product Description:</b></label>
+          <input type="text" name="prodes" maxlength="40" style="height: 80px;">
+          <br><br>
+          <div class="autocomplete">
+            <label for="category"><b>Category of product:</b></label>
+            <input id="myInput" type="text" name="myCategory" placeholder="Enter your category">
+          </div>
+        <br><br>
+<!--<form class="form" method="POST" action="/dash">
+          
+          <label for="maxitems"><b>Maximum products for sale for customer:</b></label>
+          <input type="number" name="maxitems" min="1" max="15">
+          <br><br>-->
+          <label for="video"><b>Video link:</b></label>
+          <input type="text" name="video">
+          <br><br><br>
+          <label for="myfile" style="margin-left: -200px;"><b>Product image:</b></label>
+            <input style="margin-left:850px ; margin-top: -40px; width: 200px;color: black;" type="file" id="myfile" name="myfile">
+          <br><br>
+          <label for="qty"><b>Quantity:</b></label>
+          <input type="number" name="qty" min="1" max="8">
+          <br><br>
+          <label for="price"><b>Price:</b></label>
+          <input type="text" name="price">
+          <br><br>
+          <input type="submit" value="Submit" onclick="myFunction()">
+        </form>
+      </div>
+  </div>
+      <script>
+function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+          b.addEventListener("click", function(e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  /*execute a function when someone clicks in the document:*/
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+  });
+}
+/*An array containing all the country names in the world:*/
+var categories = ["Fruits","Vegetables","Grocery","Daily Essentials","Tools and Electricals","Grooming Essentials","Baby Essentials","Best Sellers"];
+
+/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+autocomplete(document.getElementById("myInput"), categories);
+</script>   
+
+<script>
+function myFunction() {
+  alert("Product Added!");
+}
+</script>
+<div style="margin-top: -50px;">
+    <footer>    
+             <div class="container1" style="background-color: #1a152c;">
+               
+                        <div class="row">
+                        <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12">
+                            <ul class="adress">
+                                <br>
+                                <a name="contact-section"></a>
+                                 <span>Address</span>    
+                                 <li>
+                                    <p style="font-family: 'Roboto';">Lorem ipsum dolor sit amet, vero omnis vocibus</p>
+                                  </li>
+                                       
+                                  <li>
+                                    <p>+90 1234 56789</p>
+                                  </li>
+                                       
+                                  <li>
+                                    <p>info@gmail.com</p>
+                                  </li>
+                             </ul>
+                        </div>
+                        <div class="vl"></div>
+                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                            <ul class="contact">
+                                <br>
+                                 <span >Quick Links</span>    
+                                 <li>
+                                    <a href="#">Home</a>
+                                  </li>
+                                       
+                                  <li>
+                                     <a href="#">Offers</a>
+                                  </li>
+                                       
+                                  <li>
+                                    <a href="#">Blog</a>
+                                  </li>
+                                       
+                                  <li>
+                                    <a href="#">Contact Us</a>
+                                 </li>
+                            </ul>
+                        </div>
+                        <div class="vl"></div>
+                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                           <ul class="social">
+                               <span ><br>Follow us</span>    
+                               <li>
+                                    <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                               </li>
+                              
+                               <li>
+                                    <a href="#"><i class="fa fa-github fa-2x"></i></a>
+                               </li>
+                                
+                               <li>
+                                    <a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
+                               </li>
+                               
+                               <li>
+                                    <a href="#"><i class="fa fa-tumblr fa-2x"></i></a>
+                               </li>
+                                
+                               <li>
+                                    <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
+                              </li>
+                              
+                     </ul>
+           </div>
+           </div>
+           </div>
+        </div>
+        <hr style="border: 1px solid white;">
+        <div style="color: white;">
+        &copy; Copyright 2020 All rights reserved
+        <p class="float-right">Terms and Conditions | Privacy Policy</p>
+        </div>
+        </footer>
+      </div>
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+    </html>

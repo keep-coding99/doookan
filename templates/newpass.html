@@ -1,0 +1,79 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>New password</title>
+<link href="{{ url_for('static',filename='css/for.css') }}" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+    <style>
+#msg {
+       visibility: hidden;
+    min-width: 250px;
+    
+    background-color:yellow;
+    color: #000;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    right: 37%;
+    top: 30px;
+    font-size: 17px;
+	margin-right:50px;
+}
+
+#msg.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {top: 0; opacity: 0;} 
+    to {top: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {top: 30px; opacity: 1;} 
+    to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {top: 30px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+}
+</style>
+</head>
+
+<body style="background-image: url({{ url_for('static', filename='img/pass.jpg') }});width: 100%; overflow-x: hidden; background-attachment: fixed;
+background-position: center;">
+<div class="forget" style="margin-top: 100px;background: rgba(44,62,80,0.9);">
+
+<form action="/newpass" method="POST">
+<div class="newpass">
+<h2 align="center" style="color:#fff;">Change password</h2>
+
+<input type="text" name="username" placeholder="Enter username" ><br><br>
+<input type="password" name="pass" placeholder="New Password" /><br /><br />
+<input type="password" name="confirmpass" placeholder="Confirm Password" /><br /><br />
+<button type="submit" value="Submit" style="height: 40px; width: 70px;background-color: white; color: black; border-radius: 15px; margin-left: 90px;" onclick="myFunction()">Submit</button> <br /><br />
+<a href="login.html" style="text-decoration:none;text-align: center;">Go back to Login page</a><br /><br />
+
+<div id="msg">password updated successfully!</div>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("msg");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
+}
+</script>
+</form>
+</div>
+</body>
+</html>

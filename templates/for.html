@@ -1,0 +1,81 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Forgot password</title>
+<link href="{{ url_for('static',filename='css/for.css') }}" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+    <style>
+#msg {
+       visibility: hidden;
+    min-width: 250px;
+    
+    background-color:pink;
+    color: #000;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    right: 37%;
+    top: 30px;
+    font-size: 17px;
+	margin-right:50px;
+}
+
+#msg.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {top: 0; opacity: 0;} 
+    to {top: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {top: 30px; opacity: 1;} 
+    to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {top: 30px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+}
+</style>
+</head>
+
+<body style="background-image: url({{ url_for('static', filename='img/pass.jpg') }});width: 100%; overflow-x: hidden; background-attachment: fixed;
+background-position: center;">
+<div class="forget" style="margin-top: 100px;background: rgba(44,62,80,0.9);">
+
+<form action="/for" method="POST">
+
+<h2 align="center" style="color:#fff;">Forgot password</h2>
+<h5 style="font-size:15px; color:pink; text-align: center;">Enter email here that you used on your account.We send link on your email to reset your password.</h5>
+<input type="text" name="username" placeholder="Enter your username" >
+<br> <br>
+<input type="text" name="mail" placeholder="Enter your email" /><br /><br />
+<center>
+<input type="submit" value="Send" style="height: 40px; width: 70px;background-color: white; color: black; border-radius: 15px; margin-left: 10px;" onclick="myFunction()"/><br /><br />
+</center>
+<!--<a href="login.html" style="text-decoration:none;">Go back to Login page</a><br /><br />-->
+
+<div id="msg">Link sent on your email successfully!</div>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("msg");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+</script>
+</form>
+</div>
+</body>
+</html>
