@@ -15,8 +15,8 @@ app=Flask(__name__)
 skey=os.urandom(12).hex()
 # print(skey)
 app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] ='dbadmin99'
-app.config['MYSQL_DATABASE_DB'] = 'intern'
+app.config['MYSQL_DATABASE_PASSWORD'] ='your pass'
+app.config['MYSQL_DATABASE_DB'] = 'your db name'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 app.config['SECRET_KEY'] = skey
 mysql.init_app(app)
@@ -25,8 +25,8 @@ msg=''
 db = my.connect(
 		    host = "localhost",
 		    user = "root",
-		    passwd = "dbadmin99",
-		    database = "intern"
+		    passwd = "your pass",
+		    database = "your db name"
 		)
 
 @app.route('/dash')
@@ -98,11 +98,11 @@ def forgotpass():
 
 @app.route('/for', methods=['POST'])
 def sendmail():
-	sender_email = "pythontemp98@gmail.com"
-	receiver_email = "saakshiagrawal55@gmail.com" #request.form['mail']
-	password = 'python@123'                #input("Type your password and press enter:")
+	sender_email = "sender_email@gmail.com"
+	receiver_email = "rec_email@gmail.com" #request.form['mail']
+	password = 'abcde'                #input("Type your password and press enter:")
 	subject='this is test mail'
-	file_location = 'D:\\newfile.txt'
+	file_location = 'c:\\newfile.txt'
 	message='This is the message to be sent, the link for password reset'
 
 	msg = MIMEMultipart()
